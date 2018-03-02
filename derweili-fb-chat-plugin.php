@@ -112,13 +112,13 @@ class Derweili_FB_Chat_Plugin
             <div class="inner">
                 <h6><?php echo get_theme_mod('derweili_fb_chat_infotext_headline', '#0084ff'); ?></h6>
                 <p>
-                    <?php echo get_theme_mod('derweili_fb_chat_infotext', '#0084ff'); ?>
+                    <?php echo get_theme_mod('derweili_fb_chat_infotext', ''); ?>
                 </p>
                 <div class="button-section">
                     <a id="accept" class="button"><?php echo get_theme_mod('derweili_fb_chat_start_chat_button_text', 'Start chat'); ?></a>
                     <?php if( get_theme_mod('derweili_fb_chat_privacy_link', null) ) : ?>
 
-                        <a href="<?php echo get_permalink(get_theme_mod('derweili_fb_chat_privacy_link', null)); ?>"><?php echo get_theme_mod('derweili_fb_chat_privacy_policy_link', __('Privacy Policy')); ?></a>
+                        <a href="<?php echo get_permalink(get_theme_mod('derweili_fb_chat_privacy_link', null)); ?>"><?php echo get_theme_mod('derweili_fb_chat_privacy_policy_link', __('Privacy Policy', 'derweili-fb-chat-plugin')); ?></a>
                     <?php endif; ?>
 
                 </div>
@@ -162,7 +162,7 @@ class Derweili_FB_Chat_Plugin
 
 
         $wp_customize->add_section( 'derweili_fb_chat_settings_section', array(
-            'title' => __( 'Facebook Chat Settings' ),
+            'title' => __( 'Facebook Chat Settings', 'derweili-fb-chat-plugin'),
             'priority' => 100,
         ) );
 
@@ -234,53 +234,53 @@ class Derweili_FB_Chat_Plugin
         $wp_customize->add_setting(
             'derweili_fb_chat_privacy_policy_link',
             array(
-                'default' => __('Privacy Policy'),
+                'default' => __( 'Privacy Policy', 'derweili-fb-chat-plugin' ),
                 'transport' => 'refresh'
             )
         );
 
         $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'derweili_fb_chat_app_id', array(
-            'label'        => __('Facebook App ID'),
+            'label'        => __( 'Facebook App ID', 'derweili-fb-chat-plugin' ),
             'section'    => 'derweili_fb_chat_settings_section',
             'settings'   => 'derweili_fb_chat_app_id',
         ) ) );
 
 
         $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'derweili_fb_chat_page_id', array(
-            'label'        => __('Page ID'),
+            'label'        => __('Page ID', 'derweili-fb-chat-plugin'),
             'section'    => 'derweili_fb_chat_settings_section',
             'settings'   => 'derweili_fb_chat_page_id',
         ) ) );
 
 
         $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'derweili_fb_chat_theme_color', array(
-            'label'        => __('Theme Color'),
+            'label'        => __( 'Theme Color', 'derweili-fb-chat-plugin' ),
             'section'    => 'derweili_fb_chat_settings_section',
             'settings'   => 'derweili_fb_chat_theme_color',
         ) ) );
 
 
         $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'derweili_fb_chat_logged_in_greeting', array(
-            'label'        => __('Logged in greeting'),
+            'label'        => __( 'Logged in greeting', 'derweili-fb-chat-plugin' ),
             'section'    => 'derweili_fb_chat_settings_section',
             'settings'   => 'derweili_fb_chat_logged_in_greeting',
         ) ) );
 
         $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'derweili_fb_chat_logged_out_greeting', array(
-            'label'        => __('Logged out greeting'),
+            'label'        => __( 'Logged out greeting', 'derweili-fb-chat-plugin' ),
             'section'    => 'derweili_fb_chat_settings_section',
             'settings'   => 'derweili_fb_chat_logged_out_greeting',
         ) ) );
 
 
         $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'derweili_fb_chat_infotext_headline', array(
-            'label'        => __('Infotext Headline'),
+            'label'        => __( 'Infotext Headline', 'derweili-fb-chat-plugin' ),
             'section'    => 'derweili_fb_chat_settings_section',
             'settings'   => 'derweili_fb_chat_infotext_headline',
         ) ) );
 
         $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'derweili_fb_chat_start_chat_button_text', array(
-            'label'        => __('Start chat button text'),
+            'label'        => __( 'Start chat button text', 'derweili-fb-chat-plugin' ),
             'section'    => 'derweili_fb_chat_settings_section',
             'settings'   => 'derweili_fb_chat_start_chat_button_text',
         ) ) );
@@ -292,8 +292,7 @@ class Derweili_FB_Chat_Plugin
             'type' => 'textarea',
             'priority' => 10, // Within the section.
             'section' => 'derweili_fb_chat_settings_section', // Required, core or custom.
-            'label' => __( 'Infotext' ),
-//            'description' => __( 'This is a date control with a red border.' ),
+            'label' => __( 'Infotext', 'derweili-fb-chat-plugin'),
             'setting' => 'derweili_fb_chat_infotext'
         ) );
 
@@ -302,14 +301,13 @@ class Derweili_FB_Chat_Plugin
             'type' => 'dropdown-pages',
             'priority' => 10, // Within the section.
             'section' => 'derweili_fb_chat_settings_section', // Required, core or custom.
-            'label' => __( 'Privacy Link' ),
-//            'description' => __( 'This is a date control with a red border.' ),
+            'label' => __( 'Privacy Link', 'derweili-fb-chat-plugin' ),
             'setting' => 'derweili_fb_chat_privacy_link'
         ) );
 
 
         $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'derweili_fb_chat_privacy_policy_link', array(
-            'label'        => __('Privacy Policy Linktext'),
+            'label'        => __( 'Privacy Policy Linktext', 'derweili-fb-chat-plugin' ),
             'section'    => 'derweili_fb_chat_settings_section',
             'settings'   => 'derweili_fb_chat_privacy_policy_link',
         ) ) );

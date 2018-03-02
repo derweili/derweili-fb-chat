@@ -27,11 +27,12 @@ https://developers.facebook.com/docs/messenger-platform/discovery/customer-chat-
 
 = Where do I find more Information about the Facebook Chat =
 
-An answer to that question.
-
-= What about foo bar? =
 
 https://developers.facebook.com/docs/messenger-platform/discovery/customer-chat-plugin
+
+= Why do we need an Opt-In Solution? =
+More Information:
+https://allfacebook.de/policy/facebook-customer-chat-plugin-messenger-datenschutz-anleitung
 
 == Screenshots ==
 
@@ -41,4 +42,3 @@ https://developers.facebook.com/docs/messenger-platform/discovery/customer-chat-
 
 = 0.1 =
 * First plugin version
-
